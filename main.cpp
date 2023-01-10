@@ -98,11 +98,10 @@ int duckDown();
 int main()
 {
 	texture_Wall.loadFromFile("textures/brick.png");
-	texture_Floor.loadFromFile("textures/floor_background.png");
-	texture_Floor2.loadFromFile("textures/wood_floor.png");
+	texture_Floor.loadFromFile("textures/wood_floor.png");
 	barrel.loadFromFile("textures/barrel.png");
 
-	sprite_floor.setTexture(texture_Floor2);
+	sprite_floor.setTexture(texture_Floor);
 	
 	sprite_object enemy(barrel, 3.0, 14.0, 0.6, 0.6);
 
@@ -164,7 +163,7 @@ int main()
 			if (rayLen == -1)
 				continue;
 			for (int j = centerRowY; j < centerRowY+64; j++) {
-				//floor raycasting
+				//floor texturing
 				d = ch / j * stp;
 				floorPointX = (int)(playerX * 64.0 + stepX * d)%64;
 				floorPointY = (int)(playerY * 64.0 + stepY * d)%64;
